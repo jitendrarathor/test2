@@ -1,0 +1,59 @@
+<div style="width:70%;float:left;">
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>IN_Date</th>
+			<th>IN_Time</th>
+			<th>OUT_Date</th>
+			<th>OUT_Time</th>
+			<th>WORK_Hour</th>
+			<th>IP_IN</th>
+			<th>IP_OUT</th>
+			<th style="border-right:1px solid black;">Status</th>
+		</tr>
+		<% @attendence.each do |attendence| %>
+			<tr>
+				<td><%= attendence.id %></td>
+				<td><%= attendence.in_date %></td>
+				<td><%= attendence.in_time %></td>
+				<td><%= attendence.out_date %></td>
+				<td><%= attendence.out_time %></td>
+				<td><%= attendence.workhour %></td>
+				<td><%= attendence.ip_in %></td>
+				<td><%= attendence.ip_out %></td>
+				<td style="border-right:1px solid black;"><%= attendence.status %></td>
+			</tr>
+		<% end %>
+	</table>
+	<p>
+	  <h3>Download:
+		<%= link_to "Excel_Format ", attendence_admin_user_path(format: "xls") %>
+	</p>
+</div>
+<div style="width:29%">
+	<table border="1">
+		<tr>
+			<th>Email</th>
+			<th>IN_Date</th>
+			<th>Total_WORK_Hour</th>
+		</tr>
+		<% @attendences.each do |attendence| %>
+			<tr>
+				<td><%= User.find(attendence.user_id).email %></td>
+				<td><%= attendence.in_date %></td>
+				<td><%= attendence.workhour %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+<br/>
+<p>
+  <h3>Download:
+		<%= link_to "Excel_Format ", attendences_admin_user_path(format: "xls") %>
+	</h3>
+</p>
+		
+
+		
+
+

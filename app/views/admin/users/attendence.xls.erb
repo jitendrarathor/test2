@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">IN_Date</Data></Cell>
+        <Cell><Data ss:Type="String">IN_Time</Data></Cell>
+        <Cell><Data ss:Type="String">OUT_Date</Data></Cell>
+        <Cell><Data ss:Type="String">OUT_Time</Data></Cell>
+        <Cell><Data ss:Type="String">WORK_Hour</Data></Cell>
+        <Cell><Data ss:Type="String">IP_IN</Data></Cell>
+        <Cell><Data ss:Type="String">IP_OUT</Data></Cell>        
+      </Row>
+    <% @attendence.each do |attendence| %>      
+      <Row>
+        <Cell><Data ss:Type="Number"><%= attendence.id %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= attendence.in_date %></Data></Cell>
+        <Cell><Data ss:Type="Time"><%= attendence.in_time %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= attendence.out_date %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= attendence.out_time %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= attendence.workhour %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= attendence.ip_in %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= attendence.ip_out %></Data></Cell>    
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>  
+</Workbook>
+

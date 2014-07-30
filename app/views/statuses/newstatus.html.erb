@@ -1,0 +1,55 @@
+<%= form_for @status, :url=>statuses_path do |f| %>
+	<table border="1">
+		<tr>
+			<td>Date</td>
+			<td><%= f.text_field :date %></td>
+		</tr>
+		<tr>
+			<td>In_Time</td>
+			<td><%= f.text_field :in_time %></td>
+		</tr>
+		<tr>
+			<td>Out_Time</td>
+			<td><%= f.text_field :out_time %></td>
+		</tr>
+		<tr>
+			<td>Subject</td>
+			<td><%= f.text_field :subject %></td>
+		</tr>
+		<tr>
+			<td>Project_Name</td>
+			<td><%= f.text_field :project_name %></td>
+		</tr>
+		<tr>
+			<td>Client_Name</td>
+			<td><%= f.text_field :client_name %></td>
+		</tr>
+		<tr>
+			<td>Co_Ordinator</td>
+			<td><%= f.text_field :co_ordinator %></td>		
+		</tr>
+		<tr>
+			<td>Working_Hour</td>
+			<td><%= f.text_field :work_hour %></td>		
+		</tr>
+		<tr>
+			<td>Break_Time</td>
+			<td><%= f.text_field :break_time %></td>		
+		</tr>
+		<tr>
+			<td>Meeting_Description</td>
+			<td><%= f.text_area :meeting_description %></td>		
+		</tr>
+		<tr>
+			<td>Task_Description</td>
+			<td><%= f.text_area :task_description %></td>		
+		</tr>
+		<tr>
+			<td>Reason</td>
+			<td><%= f.text_area :resion %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit "Update Status" %></td>
+		</tr>
+	</table>
+<% end %>

@@ -1,0 +1,13 @@
+<%= form_for @attendence, :url => attendences_path do |f| %>
+<table>
+	 <tr>
+	   <th>Indate</th>
+	   <th>intime</th>
+	 </tr>
+	  <td><%= f.text_field :in_date %></td>
+	  <td><%= f.text_field :in_time %></td>
+	 </tr>
+</table>
+ <%= f.submit "Update checkin" %>
+ <% end %>
+

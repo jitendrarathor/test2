@@ -1,0 +1,10 @@
+<% if current_user.attendences.blank? %>
+	<%= link_to 'CheckIn', checkin_attendences_path %>
+<% else %>
+	<% if Attendence.where(:user_id => current_user.id).last.out_date.blank? %>
+		<%= link_to 'CheckOut', checkout_attendences_path %>
+	<% else %>
+		<%= link_to 'CheckIn', checkin_attendences_path %>
+	<% end %>
+<% end %>
+

@@ -1,0 +1,32 @@
+<table>
+	<tr>
+		<th>Subject</th>
+		<th>Date</th>
+		<th>IN_Time</th>
+		<th>OUT_Time</th>
+		<th>Project_Name</th>
+		<th>Client_Name</th>
+		<th>Co_Ordinator</th>
+		<th>Work_Hour</th>
+		<th>Break_Time</th>
+		<th>Meeting_Description</th>
+		<th>Task_Description</th>
+		<th>Reason</th>
+	</tr>
+	<% @status.each do |status| %>
+		<tr>
+			<td><%= status.subject %></td>
+			<td><%= status.date %></td>
+			<td><%= status.in_time %></td>
+			<td><%= status.out_time %></td>
+			<td><%= status.project_name %></td>
+			<td><%= status.client_name %></td>
+			<td><%= status.co_ordinator %></td>
+			<td><%= status.work_hour %></td>
+			<td><%= status.break_time %></td>
+			<td><%= status.meeting_description %></td>
+			<td><%= status.task_description %></td>
+			<td><%= status.resion %></td>
+		</tr>
+	<% end %>
+</table>

@@ -1,5 +1,22 @@
 <%= form_for @status, :url=>statuses_path do |f| %>
-	<table border="1">
+<div id="wr">
+	<table>
+		<tr>
+			<td id="wr1">Subject</td>
+			<td id="wrp"><%= f.text_field :subject %></td>
+		</tr>
+		<tr>
+			<td>Project_Name</td>
+			<td><%= f.text_field :project_name %></td>
+		</tr>
+		<tr>
+			<td>Client_Name</td>
+			<td><%= f.text_field :client_name %></td>
+		</tr>
+		<tr>
+			<td id="wr2">Co_Ordinator</td>
+			<td id="wr2"><%= f.text_field :co_ordinator %></td>		
+		</tr>
 		<tr>
 			<td>Date</td>
 			<td><%= f.text_field :date %></td>
@@ -11,30 +28,15 @@
 		<tr>
 			<td>Out_Time</td>
 			<td><%= f.text_field :out_time %></td>
-		</tr>
-		<tr>
-			<td>Subject</td>
-			<td><%= f.text_field :subject %></td>
-		</tr>
-		<tr>
-			<td>Project_Name</td>
-			<td><%= f.text_field :project_name %></td>
-		</tr>
-		<tr>
-			<td>Client_Name</td>
-			<td><%= f.text_field :client_name %></td>
-		</tr>
-		<tr>
-			<td>Co_Ordinator</td>
-			<td><%= f.text_field :co_ordinator %></td>		
-		</tr>
+		</tr>		
+		
 		<tr>
 			<td>Working_Hour</td>
 			<td><%= f.text_field :work_hour %></td>		
 		</tr>
 		<tr>
-			<td>Break_Time</td>
-			<td><%= f.text_field :break_time %></td>		
+			<td id="wr3">Break_Time</td>
+			<td id="wr3"><%= f.text_field :break_time %></td>		
 		</tr>
 		<tr>
 			<td>Meeting_Description</td>
@@ -52,4 +54,5 @@
 			<td><%= f.submit "Update Status" %></td>
 		</tr>
 	</table>
+	</div>
 <% end %>

@@ -10,13 +10,13 @@ class CreateStatuses < ActiveRecord::Migration
     	t.string :client_name
     	t.string :co_ordinator
     	t.time :work_hour
-    	t.time :break_time
+    	t.string :break_time
     	t.string :meeting_description
     	t.string :task_description
     	t.string :resion
 
-        t.references :user, index:true
-      t.timestamps
+        t.references :user
+        t.timestamps
     end
   end
 end

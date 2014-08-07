@@ -72,10 +72,11 @@ ActiveRecord::Schema.define(version: 20140728104320) do
     t.string   "client_name"
     t.string   "co_ordinator"
     t.time     "work_hour"
-    t.time     "break_time"
+    t.string   "break_time"
     t.string   "meeting_description"
     t.string   "task_description"
     t.string   "resion"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

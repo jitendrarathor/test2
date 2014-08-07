@@ -1,32 +1,32 @@
-<table>
+<table style="border-top: 1px solid black">
 	<tr>
-		<th>Subject</th>
-		<th>Date</th>
-		<th>IN_Time</th>
-		<th>OUT_Time</th>
-		<th>Project_Name</th>
-		<th>Client_Name</th>
-		<th>Co_Ordinator</th>
-		<th>Work_Hour</th>
-		<th>Break_Time</th>
-		<th>Meeting_Description</th>
-		<th>Task_Description</th>
-		<th>Reason</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Subject</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Date</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">IN_Time</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">OUT_Time</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Project_Name</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Client_Name</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Co_Ordinator</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Work_Hour</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Break_Time</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Meeting_Description</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Task_Description</th>
+		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Reason</th>
 	</tr>
 	<% @status.each do |status| %>
 		<tr>
-			<td><%= status.subject %></td>
-			<td><%= status.date %></td>
-			<td><%= status.in_time %></td>
-			<td><%= status.out_time %></td>
-			<td><%= status.project_name %></td>
-			<td><%= status.client_name %></td>
-			<td><%= status.co_ordinator %></td>
-			<td><%= status.work_hour %></td>
-			<td><%= status.break_time %></td>
-			<td><%= status.meeting_description %></td>
-			<td><%= status.task_description %></td>
-			<td><%= status.resion %></td>
+			<td style="border-right:1px solid black"><%= status.subject %></td>
+			<td style="border-right:1px solid black"><%= status.date %></td>
+			<td style="border-right:1px solid black"><%= status.in_time %></td>
+			<td style="border-right:1px solid black"><%= status.out_time %></td>
+			<td style="border-right:1px solid black"><%= status.project_name %></td>
+			<td style="border-right:1px solid black"><%= status.client_name %></td>
+			<td style="border-right:1px solid black"><%= status.co_ordinator %></td>
+			<td style="border-right:1px solid black"><%= status.work_hour %></td>
+			<td style="border-right:1px solid black"><%= status.break_time %></td>
+			<td style="border-right:1px solid black"><%= status.meeting_description %></td>
+			<td style="border-right:1px solid black"><%= status.task_description %></td>
+			<td style="border-right:1px solid black"><%= status.resion %></td>
 		</tr>
 	<% end %>
 </table>

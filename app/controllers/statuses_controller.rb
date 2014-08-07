@@ -5,18 +5,14 @@ class StatusesController < ApplicationController
 	end
 
 	def create
-		@status = Status.new(status_params)
-		#@status.created_by=current_user.id
-		@status.save
-		if
-  		@status.save
-  		render 'statusshow'
- 		end		
+		@status = current_user.statuses
+		@status = @status.new(status_params)				
+  	@status.save
+  	render 'statusshow' 				
 	end
 
 	def statusshow
 	end
-
 
 	private
 	def status_params

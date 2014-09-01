@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140728104320) do
+ActiveRecord::Schema.define(version: 20140822113659) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -63,6 +63,23 @@ ActiveRecord::Schema.define(version: 20140728104320) do
 
   add_index "attendences", ["user_id"], name: "index_attendences_on_user_id"
 
+  create_table "groupprojects", force: true do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "proj_name"
+    t.string   "client_name"
+    t.string   "co_ordinator"
+    t.string   "about_project_work"
+    t.date     "started_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "statuses", force: true do |t|
     t.string   "subject"
     t.date     "date"
@@ -71,8 +88,8 @@ ActiveRecord::Schema.define(version: 20140728104320) do
     t.string   "project_name"
     t.string   "client_name"
     t.string   "co_ordinator"
-    t.time     "work_hour"
-    t.string   "break_time"
+    t.integer  "work_hour"
+    t.integer  "break_time"
     t.string   "meeting_description"
     t.string   "task_description"
     t.string   "resion"
@@ -102,7 +119,6 @@ ActiveRecord::Schema.define(version: 20140728104320) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
-    t.string   "password"
     t.string   "first_name"
     t.string   "last_name"
   end

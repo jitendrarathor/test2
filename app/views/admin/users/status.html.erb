@@ -1,32 +1,32 @@
-<table style="border-top: 1px solid black">
-	<tr>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Subject</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Date</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">IN_Time</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">OUT_Time</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Project_Name</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Client_Name</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Co_Ordinator</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Work_Hour</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Break_Time</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Meeting_Description</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Task_Description</th>
-		<th style="border-right:1px solid black;border-bottom: 1px solid black !important">Reason</th>
+<table id="ast1">
+	<tr bgcolor="#D3D3D3">
+		<th id="ast2">Subject</th>
+		<th id="ast2">Date</th>
+		<th id="ast2">IN_Time</th>
+		<th id="ast2">OUT_Time</th>
+		<th id="ast2">Project_Name</th>
+		<th id="ast2">Client_Name</th>
+		<th id="ast2">Co_Ordinator</th>
+		<th id="ast2">Work_Hour</th>
+		<th id="ast2">Break_Time</th>
+		<th id="ast2">Meeting_Description</th>
+		<th id="ast2">Task_Description</th>
+		<th id="ast2">Reason</th>
 	</tr>
 	<% @status.each do |status| %>
 		<tr>
-			<td style="border-right:1px solid black"><%= status.subject %></td>
-			<td style="border-right:1px solid black"><%= status.date %></td>
-			<td style="border-right:1px solid black"><%= status.in_time %></td>
-			<td style="border-right:1px solid black"><%= status.out_time %></td>
-			<td style="border-right:1px solid black"><%= status.project_name %></td>
-			<td style="border-right:1px solid black"><%= status.client_name %></td>
-			<td style="border-right:1px solid black"><%= status.co_ordinator %></td>
-			<td style="border-right:1px solid black"><%= status.work_hour %></td>
-			<td style="border-right:1px solid black"><%= status.break_time %></td>
-			<td style="border-right:1px solid black"><%= status.meeting_description %></td>
-			<td style="border-right:1px solid black"><%= status.task_description %></td>
-			<td style="border-right:1px solid black"><%= status.resion %></td>
+			<td id="ast3"><%= status.subject %></td>
+			<td id="ast3"><%= status.date %></td>
+			<td id="ast3"><%= get_intime(status) %></td>
+			<td id="ast3"><%= get_outtime(status) %></td>
+			<td id="ast3"><%= status.project_name %></td>
+			<td id="ast3"><%= status.client_name %></td>
+			<td id="ast3"><%= status.co_ordinator %></td>
+			<td id="ast3"><%= get_tworkhour(status) %></td>
+			<td id="ast3"><%= get_breaktime(status) %></td>
+			<td id="ast3"><%= status.meeting_description %></td>
+			<td id="ast3"><%= status.task_description %></td>
+			<td id="ast3"><%= status.resion %></td>
 		</tr>
 	<% end %>
 </table>

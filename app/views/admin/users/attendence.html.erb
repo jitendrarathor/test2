@@ -1,27 +1,28 @@
 <div style="width:70%;float:left;">
-	<table border="1">
-		<tr>
-			<th>ID</th>
-			<th>IN_Date</th>
-			<th>IN_Time</th>
-			<th>OUT_Date</th>
-			<th>OUT_Time</th>
-			<th>WORK_Hour</th>
-			<th>IP_IN</th>
-			<th>IP_OUT</th>
-			<th style="border-right:1px solid black;">Status</th>
+	<table id="aat1">
+		<tr bgcolor="#D3D3D3">
+			<th id="aat2">ID</th>
+			<th id="aat2">IN_Date</th>
+			<th id="aat2">IN_Time</th>
+			<th id="aat2">OUT_Date</th>
+			<th id="aat2">OUT_Time</th>
+			<th id="aat2">WORK_Hour</th>
+			<th id="aat2">IP_IN</th>
+			<th id="aat2">IP_OUT</th>
+			<th id="aat2">Status</th>
 		</tr>
 		<% @attendence.each do |attendence| %>
+
 			<tr>
-				<td><%= attendence.id %></td>
-				<td><%= attendence.in_date %></td>
-				<td><%= attendence.in_time %></td>
-				<td><%= attendence.out_date %></td>
-				<td><%= attendence.out_time %></td>
-				<td><%= attendence.workhour %></td>
-				<td><%= attendence.ip_in %></td>
-				<td><%= attendence.ip_out %></td>
-				<td style="border-right:1px solid black;"><%= attendence.status %></td>
+				<td id="aat3"><%= attendence.id %></td>
+				<td id="aat3"><%= attendence.in_date %></td>
+				<td id="aat3"><%= get_intime(attendence) %></td>
+				<td id="aat3"><%= attendence.out_date %></td>
+				<td id="aat3"><%= get_outtime(attendence) %></td>
+				<td id="aat3"><%= get_checkout(attendence) %></td>
+				<td id="aat3"><%= attendence.ip_in %></td>
+				<td id="aat3"><%= attendence.ip_out %></td>
+				<td id="aat3"><%= attendence.status %></td>
 			</tr>
 		<% end %>
 	</table>
@@ -40,8 +41,8 @@
 		<% @attendences.each do |attendence| %>
 			<tr>
 				<td><%= User.find(attendence.user_id).email %></td>
-				<td><%= attendence.in_date %></td>
-				<td><%= attendence.workhour %></td>
+				<td><%= attendence.in_date %></td>	
+				<td><%= get_totalworkhour(attendence) %></td>						
 			</tr>
 		<% end %>
 	</table>

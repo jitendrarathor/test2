@@ -4,7 +4,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :attendences
   has_many :statuses
-   
+  
+  has_many :groupprojects
+  has_many :projects, :through => :groupprojects
+
+
 
   devise :invitable, :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable

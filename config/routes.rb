@@ -37,16 +37,14 @@ Rails.application.routes.draw do
           get 'attendences'
           get 'status'
           get 'statuses'
+          get 'project'
+          get 'projects'
         end
       end
     end
 
-    resources :statuses do
-      collection do
-        get 'newstatus'
-        get 'statusshow'
-      end
-    end
+    resources :statuses
+    resources :projects
 
 
 

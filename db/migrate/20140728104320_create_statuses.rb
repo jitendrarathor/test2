@@ -9,8 +9,8 @@ class CreateStatuses < ActiveRecord::Migration
     	t.string :project_name
     	t.string :client_name
     	t.string :co_ordinator
-    	t.time :work_hour
-    	t.string :break_time
+    	t.integer :work_hour
+    	t.integer :break_time
     	t.string :meeting_description
     	t.string :task_description
     	t.string :resion

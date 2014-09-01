@@ -1,0 +1,21 @@
+<table id="ast1">
+	<tr bgcolor="#D3D3D3">
+		<th id="ast2">ID</th>
+		<th id="ast2">Project_Name</th>
+		<th id="ast2">Client_Name</th>
+		<th id="ast2">Co_Ordinator</th>
+		<th id="ast2">About_Project_Work</th>
+		<th id="ast2">Started_Date</th>
+	</tr>
+	<% @projects.each do |project| %>
+
+		<tr>
+			<td id="ast3"><%= project.id %></td>
+			<td id="ast3"><%= project.proj_name %></td>
+			<td id="ast3"><%= project.client_name %></td>
+			<td id="ast3"><%= project.co_ordinator %></td>
+			<td id="ast3"><%= project.about_project_work %></td>
+			<td id="ast3"><%= project.started_date %></td>
+			</tr>
+	<% end %>
+</table>

@@ -1,0 +1,55 @@
+<%= form_for @project, :url=>projects_path do |f| %>
+<div id="wrp1">
+	<table>
+		<tr>
+			<td id="wrp2">Project_Name</td>
+			<td id="wrp2"><%= f.text_field :proj_name %></td>
+		</tr>		
+		<tr>
+			<td>Client_Name</td>
+			<td><%= f.text_field :client_name %></td>
+		</tr>
+		<tr>
+			<td id="wrp3">Co_Ordinator</td>
+			<td id="wr2"><%= f.text_field :co_ordinator %></td>
+		</tr>
+		<tr>
+			<td id="wrp6">About_Project_Work</td>
+			<td><%= f.text_area :about_project_work %></td>
+		</tr>
+		<tr>
+			<td id="wrp4">Started_Date</td>
+			<td><%= f.text_field :started_date, 'data-behaviour' => 'datepicker', :placeholder=> 'dd:mm:yyyy' %></td>
+		</tr>
+		<tr>
+			<td id="wrp5"><%= f.submit "Submit Project" %></td>
+		</tr>
+		
+	</table>
+	</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

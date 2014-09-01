@@ -1,0 +1,66 @@
+<%= form_for @status, :html => { :onsubmit => 'return validat();' }, :url=>statuses_path do |f| %>
+<div id="wr">
+	<table>
+		<tr>
+			<td id="wr1">Subject</td>
+			<td id="wra1"><%= f.text_field :subject %></td>
+		</tr>
+		<tr>
+			<td>Project_Name</td>
+			<td><%= f.text_field :project_name, :class=>'txt1',:required=>"required" %></td>
+		</tr>
+		<tr>
+			<td>Client_Name</td>
+			<td><%= f.text_field :client_name,:required=>"required" %></td>
+		</tr>
+		<tr>
+			<td id="wr2">Co_Ordinator</td>
+			<td id="wr2"><%= f.text_field :co_ordinator,:required=>"required" %></td>		
+		</tr>
+		<tr>
+			<td>Date</td>
+			<td><%= f.text_field :date, 'data-behaviour' => 'datepicker', :placeholder=> 'dd:mm:yyyy' %></td>
+		</tr>
+		<tr>
+			<td>In_Time</td>
+			<td><%= f.time_select :in_time, {ampm: true} %></td>
+		</tr>
+		<tr>
+			<td>Out_Time</td>
+			<td><%= f.time_select :out_time, {ampm: true} %></td>
+		</tr>		
+		<tr>
+			<td>Working_Hour</td>
+			<td><%#= f.time_select :work_hour %>	
+			 <%= select(:status, :hour1, [['Select in Hours', 'nill'],['1', '1'], ['2', '2'], ['3', '3'],['4', '4'], ['5', '5'], ['6', '6'], ['7', '7'], ['8', '8'], ['9', '9'], ['10', '10'], ['11', '11'], ['12', '12']]) %>
+ 				<%= select(:status, :mins1, [['Select in Minutes', 'nill'],['10', '10'], ['20', '20'], ['30', '30'],['40', '40'], ['50', '50']]) %>
+			</td>
+		</tr>
+		<tr>
+			<td id="wr3">Break_Time</td>
+			<td id="wr3"><%#= f.time_select :break_time %>
+				<%= select(:status, :hour, [['Select in Hours', 'nill'],['1', '1'], ['2', '2'], ['3', '3'],['4', '4'], ['5', '5'], ['6', '6'], ['7', '7'], ['8', '8'], ['9', '9'], ['10', '10']]) %>
+ 				<%= select(:status, :mins, [['Select in Minutes', 'nill'],['10', '10'], ['20', '20'], ['30', '30'],['40', '40'], ['50', '50']]) %>
+			</td>	
+		</tr>
+		<tr>
+			<td>Meeting_Description</td>
+			<td><%= f.text_area :meeting_description %></td>		
+		</tr>
+		<tr>
+			<td>Task_Description</td>
+			<td><%= f.text_area :task_description %></td>		
+		</tr>
+		<tr>
+			<td>Reason</td>
+			<td><%= f.text_area :resion %></td>
+		</tr>
+		<tr>
+			<td id="btn1"><%= f.submit "Update Status" %></td>
+		</tr>
+	</table>
+	</div>
+<% end %>
+
+
+ 

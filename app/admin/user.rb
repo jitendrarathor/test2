@@ -5,12 +5,13 @@ ActiveAdmin.register User  do
       id_column
       column :email
       actions defaults: true do |user|
-        #link_to 'attendence',attendence_admin_user_path(user)
         link_to "Attendence", attendence_admin_user_path(user)
-       #link_to "Status",status_admin_user_path(user)
       end
       actions defaults: false do |user|
         link_to "Status",status_admin_user_path(user)
+      end
+      actions defaults: false do |user|
+        link_to "Projects",project_admin_user_path(user)
       end
 
     end
@@ -76,6 +77,11 @@ ActiveAdmin.register User  do
 
     def status
       @status = Status.where(:user_id => params[:id])
-    end    
+    end 
+
+    def project
+      @projects = User.find(params[:id]).projects
+      #@projects = User.where(id: params[:id]).first.try(:projects) 
+    end   
   end
 end

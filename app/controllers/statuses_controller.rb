@@ -1,17 +1,19 @@
 class StatusesController < ApplicationController
-
-	def newstatus
+	#include StatusesHelper
+	def new
 		@status= Status.new
 	end
 
-	def create
-		@status = current_user.statuses
-		@status = @status.new(status_params)				
+	def create	
+		params[:status][:work_hour] = params[:status][:hour1].to_i * 60 * 60 + params[:status][:mins1].to_i * 60
+		params[:status][:break_time] = params[:status][:hour].to_i * 60 * 60 + params[:status][:mins].to_i * 60
+		@status = current_user.statuses.new(status_params)				
   	@status.save
-  	render 'statusshow' 				
+  	redirect_to status_path('show')
+  	#render 'show' 				
 	end
 
-	def statusshow
+	def show
 	end
 
 	private

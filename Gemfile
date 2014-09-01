@@ -50,3 +50,16 @@ gem 'devise_invitable', '~> 1.3.4'
 gem "letter_opener", :group => :development
 
 gem 'sqlite3'
+
+
+gem 'datetimepicker-rails', '>= 3.0.0', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git', :branch => 'tarruda'
+
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-timepicker-rails'
+
+
+gem 'bootstrap-datetimepicker-rails'
+
+gem 'time_of_day'
+
+

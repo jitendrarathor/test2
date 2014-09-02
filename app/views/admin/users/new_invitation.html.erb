@@ -13,6 +13,10 @@
 			<td><%= f.label :email %></td>
 			<td><%= f.text_field :email, :required => true %></td>
 		</tr>
+		<tr>
+			<td><%= f.label :password %></td>
+			<td><%= f.password_field :password, :required => true %></td>
+		</tr>
 		</table>		
 		   <%= f.submit "Send an Invitation" %>
 <% end %>		 

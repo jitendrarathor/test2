@@ -13,7 +13,6 @@ ActiveAdmin.register User  do
       actions defaults: false do |user|
         link_to "Projects",project_admin_user_path(user)
       end
-
     end
 
 
@@ -43,7 +42,7 @@ ActiveAdmin.register User  do
   end
    
   collection_action :send_invitation, :method => :post do
-     @user = User.invite!(params.require(:user).permit(:email, :first_name, :last_name), current_admin_user)
+     @user = User.invite!(params.require(:user).permit(:email, :first_name, :last_name, :password), current_admin_user)
     if @user.errors.empty?
       flash[:success] = "User has been successfully invited."
       redirect_to admin_users_path

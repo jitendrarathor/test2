@@ -5,8 +5,6 @@ class UsersInvitationsController < Devise::InvitationsController
 	  render :edit, :layout => false
 	end
 
-
-
   def new
     @user = User.new
   end
@@ -15,10 +13,9 @@ class UsersInvitationsController < Devise::InvitationsController
 	 @user = User.new(user_params)
 	 @user.save
   end
-
   
 	def update
-        User.create(params[:user].require(:user).permit(:email,:first_name,:last_name))
+    User.create(params[:user].require(:user).permit(:email,:first_name,:last_name,:password))
 		self.resource = resource_class.accept_invitation!(resource_params)
 		 
 		if resource.errors.empty?
@@ -27,14 +24,13 @@ class UsersInvitationsController < Devise::InvitationsController
 			sign_in(resource_name, resource)
 			 
 			redirect_to edit_user_registration_path
-			else
+	  else
 			respond_with_navigational(resource){ render :edit, :layout => false }
-        end
     end
+  end
 
 	private
-
-    def user_params    
-	    params.require(:user).permit(:email, :first_name, :last_name)
+  def user_params    
+	  params.require(:user).permit(:email, :first_name, :last_name,:password)
 	end
 end

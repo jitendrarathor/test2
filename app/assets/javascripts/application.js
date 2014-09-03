@@ -30,7 +30,53 @@ $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
     $(this).datepicker({"format": "dd-mm-yyyy", "weekStart": 1, "autoclose": true})
 });
 
+
+
 function validate()
+	{
+
+    var intime=document.getElementById("status_in_time_4i").value;
+    var mintime=document.getElementById("status_in_time_5i").value;
+    var totalinminut=+(intime*60) + +(mintime);
+
+    var outtime=document.getElementById("status_out_time_4i").value;
+    var minouttime=document.getElementById("status_out_time_5i").value;
+    var totaloutminut=+(outtime*60) + +(minouttime);
+
+
+    var totalwork=totaloutminut - totalinminut;
+
+
+    var workhour=document.getElementById("status_hour1").value;
+    var minworkhour=document.getElementById("status_mins1").value;
+    var totalwork_in_minut=+(workhour*60) + +(minworkhour);
+
+    
+		var breaktime=document.getElementById("status_hour").value;
+		var minbreaktime=document.getElementById("status_mins").value;
+		var totalbreak=+(breaktime*60) + +(minbreaktime);
+
+			  
+		if(totalwork_in_minut > totalwork )
+		{
+			alert("Working Hour Should be less then Total Work Hour!!!!!!!");
+		  document.getElementById("status_hour1").focus();
+		  return false
+	  }  	
+
+	  if(totalbreak >= totalwork_in_minut)
+		{
+			alert("Break Time Should be less then Your Logged Hour!!!!!!!");
+		  document.getElementById("status_hour").focus();
+		  return false
+	  } 
+	}
+
+
+
+
+
+function valida()
 	{
   	document.getElementById("status_project_name").innerHTML="*";
 		var project_name=document.getElementById("status_project_name").value;

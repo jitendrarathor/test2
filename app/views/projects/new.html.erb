@@ -3,11 +3,11 @@
 	<table>
 		<tr>
 			<td id="wrp2">Project_Name</td>
-			<td id="wrp2"><%= f.text_field :proj_name %></td>
+			<td id="wrp2"><%= f.text_field :proj_name,:required=>"required" %></td>
 		</tr>		
 		<tr>
 			<td>Client_Name</td>
-			<td><%= f.text_field :client_name %></td>
+			<td><%= f.text_field :client_name,:required=>"required"%></td>
 		</tr>
 		<tr>
 			<td id="wrp3">Co_Ordinator</td>
@@ -15,7 +15,7 @@
 		</tr>
 		<tr>
 			<td id="wrp6">About_Project_Work</td>
-			<td><%= f.text_area :about_project_work %></td>
+			<td><%= f.text_area :about_project_work,:required=>"required" %></td>
 		</tr>
 		<tr>
 			<td id="wrp4">Started_Date</td>

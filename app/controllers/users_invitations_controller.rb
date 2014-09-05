@@ -15,7 +15,7 @@ class UsersInvitationsController < Devise::InvitationsController
   end
   
 	def update
-    User.create(params[:user].require(:user).permit(:email,:first_name,:last_name,:password))
+    User.create(params[:user].require(:user).permit(:email,:first_name,:last_name))
 		self.resource = resource_class.accept_invitation!(resource_params)
 		 
 		if resource.errors.empty?
@@ -31,6 +31,6 @@ class UsersInvitationsController < Devise::InvitationsController
 
 	private
   def user_params    
-	  params.require(:user).permit(:email, :first_name, :last_name,:password)
+	  params.require(:user).permit(:email, :first_name, :last_name)
 	end
 end

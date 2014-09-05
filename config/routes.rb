@@ -10,9 +10,8 @@ Rails.application.routes.draw do
 
   devise_for :users,
   :controllers =>{:registrations =>'registrations'},
-  :controllers => {
-  :invitations => 'user_invitations' # user_invitations_controller.rb
-  }, :skip => [:registrations] 
+  :controller => { :invitations => 'devise/invitations' },
+  :skip => [:registrations] 
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
     put 'users' => 'devise/registrations#update', :as => 'user_registration'

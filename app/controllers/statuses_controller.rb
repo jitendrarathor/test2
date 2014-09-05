@@ -9,9 +9,9 @@ class StatusesController < ApplicationController
 		params[:status][:break_time] = params[:status][:hour].to_i * 60 * 60 + params[:status][:mins].to_i * 60
 		
 		@status = current_user.statuses.new(status_params)				
-  	@status.save
+    @status.save  		
   	redirect_to status_path('show')
-  	#render 'show' 				
+  		#render 'show'					
 	end
 
 	def show

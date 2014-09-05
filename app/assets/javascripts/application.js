@@ -33,7 +33,41 @@ $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
 
 
 function validate()
-	{
+	{		
+   
+  	var subject_name=document.getElementById("status_subject").value;
+		if(subject_name =="")
+		{				
+		 	document.getElementById("reqsub").innerHTML = "Pleasw fill subject name! ";
+		  document.getElementById("status_subject").focus();
+		  return false
+		}
+
+		var project_name=document.getElementById("status_project_name").value;
+		if(project_name =="")
+		{
+			document.getElementById("reqname").innerHTML = "Pleasw fill project name!";
+			document.getElementById("status_project_name").focus();
+			return false
+		}
+
+		var client_name=document.getElementById("status_client_name").value;
+		if(client_name =="")
+		{
+			document.getElementById("reqcname").innerHTML = "Pleasw fill client name!";
+			document.getElementById("status_client_name").focus();
+			return false
+		}
+
+		var coordinatorname=document.getElementById("status_co_ordinator").value;
+		if(coordinatorname =="")
+		{
+			document.getElementById("reqconame").innerHTML = "Pleasw fill co-ordinator name!";
+			document.getElementById("status_co_ordinator").focus();
+			return false
+		}
+
+
 
     var intime=document.getElementById("status_in_time_4i").value;
     var mintime=document.getElementById("status_in_time_5i").value;
@@ -48,8 +82,9 @@ function validate()
 
 
     var workhour=document.getElementById("status_hour1").value;
-    var minworkhour=document.getElementById("status_mins1").value;
+    var minworkhour=document.getElementById("status_mins1").value;  
     var totalwork_in_minut=+(workhour*60) + +(minworkhour);
+
 
     
 		var breaktime=document.getElementById("status_hour").value;
@@ -140,12 +175,6 @@ function valida()
 
 
         
-
-
-
-
-
-	        
 
 
 
